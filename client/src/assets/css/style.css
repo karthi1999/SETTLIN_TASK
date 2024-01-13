@@ -1,0 +1,13 @@
+.hide-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  overflow: -moz-scrollbars-none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 5px; /* Adjust the width as needed */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}

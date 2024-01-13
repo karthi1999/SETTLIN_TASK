@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "icon": "/ic_grocery.png"
+    },
+    {
+      "id": 2,
+      "name": "Food & Water",
+      "icon": "/ic_food.png"
+    },
+    {
+      "id": 3,
+      "name": "Rent",
+      "icon": "/ic_home.png"
+    },
+    {
+      "id": 4,
+      "name": "Transportation",
+      "icon": "/ic_car.png"
+    },
+    {
+      "id": 5,
+      "name": "Entertainment",
+      "icon": "/ic_entertainment.png"
+    },
+    {
+      "id": 6,
+      "name": "Dining Out",
+      "icon": "/ic_pill.png"
+    },
+    {
+      "id": 7,
+      "name": "Healthcare",
+      "icon": "/ic_medical.png"
+    },
+    {
+      "id": 8,
+      "name": "Clothing",
+      "icon": "/ic_cloths.png"
+    },
+    {
+      "id": 9,
+      "name": "Education",
+      "icon": "/ic_book.png"
+    },
+    {
+      "id": 10,
+      "name": "Electric Bill",
+      "icon": "/ic_electricbill.png"
+    },
+    {
+      "id": 11,
+      "name": "Fitness",
+      "icon": "/ic_fitness.png"
+    },
+    {
+      "id": 12,
+      "name": "Other",
+      "icon": "/ic_other.png"
+    }
+  ]
+}
