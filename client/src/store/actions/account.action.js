@@ -2,6 +2,7 @@ import axios from 'axios';
 import { getAccountDetailsURL, getError, signinURL, signupURL } from '../../lib';
 import { accountLoading, setPopMsg, setPopupDesc, setShowPopup, setCode, getAccountDetails } from '../slices';
 import setCookie from '../../utils/setCookie';
+import deleteCookie from '../../utils/deleteCookie';
 
 export const signinAPI = (body) => {
   return async (dispatch) => {
@@ -62,9 +63,10 @@ export const getAccountDetailsAPI = (body) => {
     try {
       let { url } = getAccountDetailsURL()
       let { data: { data, status: { code } } } = await axios.post(url, body)
-      if (code === "200") {
-        dispatch(getAccountDetails(data))
+      if (code !== "200") {
+        deleteCookie('wt_s_id')
       }
+      dispatch(getAccountDetails(data))
       dispatch(setCode(code))
       getAccountDetails([])
     } catch (error) {

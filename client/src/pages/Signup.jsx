@@ -91,11 +91,11 @@ export default function Signup() {
 			<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 				<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 					<img
-						className="mx-auto h-10 w-auto"
-						src="/logo.png"
-						alt="Your Company"
+						className="h-28 w-auto mx-auto"
+						src="/logo.jpeg"
+						alt="Company Logo"
 					/>
-					<h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
+					<h2 className="text-center text-2xl font-bold tracking-tight">
 						Create your account
 					</h2>
 				</div>
