@@ -38,12 +38,21 @@ const Home = () => {
   const [limitFlag, setLimitFlag] = useState(false);
   const session = getCookie('wt_s_id');
   let initialState = {
-    date: '',
+    date: getCurrentDate(),
     category: '',
     discription: '',
     spend: '',
   };
   const [formData, setFormData] = useState(initialState);
+
+  function getCurrentDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
   const validateForm = () => {
     const newErrors = {};
 
@@ -292,11 +301,11 @@ const Home = () => {
               <header className="py-10">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 sm:flex justify-between items-center">
                   <div></div>
-                  <h1 className="sm:text-3xl font-bold tracking-tight text-white text-center">
-                    <span className='sm:text-2xl font-semibold pr-2'>This Month Expense  </span>
-                    &#x20B9; {currentMonthTotal} /
-                    <span className='sm:text-xl font-semibold pl-2'>
-                      {limitFlag
+                  <h1 className={`sm:text-3xl font-bold tracking-tight text-center ${limit ? limit < currentMonthTotal ? "text-[#e0454b]" : "text-white" : "text-white"}`}>
+                    <span className="sm:text-2xl font-semibold pr-2 text-white">This Month Expense </span>
+                    &#x20B9; {currentMonthTotal}
+                    <span className='sm:text-xl font-semibold pl-2 text-white'>
+                      /  {limitFlag
                         ? <input type='text' className='w-16 border bg-white text-black px-1 sm:text-base' value={limit} onChange={(e) => { setLimit(e.target.value) }} />
                         : limit} Limit
                     </span>
@@ -370,7 +379,7 @@ const Home = () => {
           </div>
         </>
         {load && <AppLoader />}
-      </div>
+      </div >
     </>
   )
 }
